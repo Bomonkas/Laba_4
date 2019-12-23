@@ -133,17 +133,24 @@ TYPE    **transp_m(TYPE** matr, int size)
 	return (matr);
 }
 
-void	mult_v_n(TYPE *vec, TYPE n, int size)
+TYPE	*mult_v_n(TYPE *vec, TYPE n, int size)
 {
+	TYPE *new_vec = new TYPE[size];
 	for (int i = 0; i < size; i++)
-		vec[i] *= n;
+		new_vec[i] = vec[i] * n;
+	return (new_vec);
 }
 
-void	mult_m_n(TYPE **matr, TYPE n, const int size)
+TYPE	**mult_m_n(TYPE **matr, TYPE n, const int size)
 {
+	TYPE **new_matr = new TYPE *[size];
 	for (int i = 0; i < size; i++)
+	{
+		new_matr[i] = new TYPE[size];
 		for (int j = 0; j < size; j++)
-			matr[i][j] *= n;
+			new_matr[i][j] = matr[i][j] * n;
+	}
+	return (new_matr);
 }
 
 TYPE 	*mult_m_v(TYPE **matr, TYPE *vec, const int size)

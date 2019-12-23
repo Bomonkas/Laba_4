@@ -25,8 +25,8 @@ TYPE    norm_1_m(TYPE **A, const int size);
 int     is_zero(TYPE elem);
 
 TYPE    **transp_m(TYPE** matr, int size);
-void	mult_v_n(TYPE *vec, TYPE n, int size);
-void	mult_m_n(TYPE **matr, TYPE n, const int size);
+TYPE	*mult_v_n(TYPE *vec, TYPE n, int size);
+TYPE	**mult_m_n(TYPE **matr, TYPE n, const int size);
 TYPE    *mult_m_v(TYPE** matr, TYPE* vec, const int size);
 TYPE    **mult_m_m(TYPE** l_matr, TYPE** r_matr, const int size);
 
